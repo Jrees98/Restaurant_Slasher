@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://cvykjjekvaiai"]
+[gd_scene load_steps=18 format=3 uid="uid://cvykjjekvaiai"]
 
 [ext_resource type="Texture2D" uid="uid://dfuiyp8p8p142" path="res://Assets/Base Character - Free/idle.png" id="1_6pbnl"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_wydkl"]
 [ext_resource type="Texture2D" uid="uid://bqjjmgjsxendg" path="res://Assets/Base Character - Free/run.png" id="2_1jxos"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n262i"]
@@ -105,6 +106,7 @@ radius = 4.35155
 height = 9.5645
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_wydkl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ggp8h")
