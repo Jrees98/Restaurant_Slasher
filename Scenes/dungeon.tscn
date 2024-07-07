@@ -6,6 +6,6 @@
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_3bgpq")]
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(-1, 0)
 zoom = Vector2(4, 4)
