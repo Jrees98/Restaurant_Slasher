@@ -16,11 +16,14 @@ func _ready():
 
 
 func _on_timer_timeout():
-	var spawn = spawn_points[randi() % spawn_points.size()]
-	var enemy = enemy_scene.instantiate()
-	enemy.position = spawn.position
-	enemy.hit_player.connect(hit)
-	main.add_child(enemy)
+	var enemy_count = get_tree().get_nodes_in_group("enemies")
+	if enemy_count.size() < get_parent().max_enemies:
+		var spawn = spawn_points[randi() % spawn_points.size()]
+		var enemy = enemy_scene.instantiate()
+		enemy.position = spawn.position
+		enemy.hit_player.connect(hit)
+		main.add_child(enemy)
+		enemy.add_to_group("enemies")
 	
 func hit():
 	hit_p.emit()
