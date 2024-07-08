@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cbij0q3302r56"]
+[gd_scene load_steps=4 format=3 uid="uid://cbij0q3302r56"]
 
 [ext_resource type="PackedScene" uid="uid://cvykjjekvaiai" path="res://Scenes/player.tscn" id="1_3bgpq"]
 [ext_resource type="Texture2D" uid="uid://mr6yo57gw8r2" path="res://Untitled_Artwork 5.png" id="2_kt01j"]
+[ext_resource type="PackedScene" uid="uid://1hxevb6qc7" path="res://Scenes/enemy_spawner.tscn" id="3_rs56d"]
 
 [node name="Dungeon" type="Node2D"]
 
@@ -14,6 +15,9 @@ zoom = Vector2(4, 4)
 [node name="DungeonGraphics" type="Node" parent="."]
 
 [node name="Boundaries" type="Sprite2D" parent="DungeonGraphics"]
-position = Vector2(4, 9)
-scale = Vector2(0.705108, 0.571486)
+position = Vector2(6, 7)
+rotation = 0.0118304
+scale = Vector2(0.753858, 0.514094)
 texture = ExtResource("2_kt01j")
+
+[node name="EnemySpawner" parent="." instance=ExtResource("3_rs56d")]

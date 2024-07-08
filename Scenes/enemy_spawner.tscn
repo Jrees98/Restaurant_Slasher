@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://1hxevb6qc7"]
+
+[ext_resource type="Script" path="res://Scenes/enemy_spawner.gd" id="1_tsap5"]
+
+[node name="EnemySpawner" type="Node2D"]
+script = ExtResource("1_tsap5")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(2.08165e-12, -50)
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+position = Vector2(25, -50)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
