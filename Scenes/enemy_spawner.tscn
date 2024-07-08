@@ -14,4 +14,10 @@ position = Vector2(25, -100)
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
+[node name="Marker2D3" type="Marker2D" parent="."]
+position = Vector2(150, 2.08165e-12)
+
+[node name="Marker2D4" type="Marker2D" parent="."]
+position = Vector2(150, 25)
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
