@@ -18,14 +18,17 @@ func _ready():
 		direction.x = 0
 		direction.y = dist.y
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	direction = (player.position - position)
 	direction = direction.normalized()
 	velocity = direction * speed
 	move_and_slide()
 	
+	if velocity.x != 0:
+		$AnimatedSprite2D.flip_h = velocity.x < 0
+	
 
 
-func _on_area_2d_body_entered(body):
+func _on_area_2d_body_entered(_body):
 	hit_player.emit()
 
