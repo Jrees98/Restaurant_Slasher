@@ -4,6 +4,8 @@ var entered : bool
 var speed : int = 50
 var direction : Vector2
 
+signal hit_player
+
 func _ready():
 	var screen_rect = get_viewport_rect()
 	var dist = screen_rect.get_center() - position
@@ -22,3 +24,8 @@ func _physics_process(delta):
 	velocity = direction * speed
 	move_and_slide()
 	
+
+
+func _on_area_2d_body_entered(body):
+	hit_player.emit()
+
