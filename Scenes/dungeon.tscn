@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cbij0q3302r56"]
+[gd_scene load_steps=3 format=3 uid="uid://cbij0q3302r56"]
 
 [ext_resource type="PackedScene" uid="uid://cvykjjekvaiai" path="res://Scenes/player.tscn" id="1_3bgpq"]
+[ext_resource type="Texture2D" uid="uid://mr6yo57gw8r2" path="res://Untitled_Artwork 5.png" id="2_kt01j"]
 
 [node name="Dungeon" type="Node2D"]
 
@@ -9,3 +10,10 @@
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(-1, 0)
 zoom = Vector2(4, 4)
+
+[node name="DungeonGraphics" type="Node" parent="."]
+
+[node name="Boundaries" type="Sprite2D" parent="DungeonGraphics"]
+position = Vector2(4, 9)
+scale = Vector2(0.705108, 0.571486)
+texture = ExtResource("2_kt01j")
