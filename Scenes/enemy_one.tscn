@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://b7rmgeqmcvglh"]
+[gd_scene load_steps=8 format=3 uid="uid://b7rmgeqmcvglh"]
 
 [ext_resource type="Texture2D" uid="uid://bor64xdl28ls3" path="res://Assets/2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/skeleton1/v1/skeleton_v1_1.png" id="1_4ekin"]
+[ext_resource type="Script" path="res://Scripts/enemy_one.gd" id="1_o0682"]
 [ext_resource type="Texture2D" uid="uid://jkmqqvwefq50" path="res://Assets/2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/skeleton1/v1/skeleton_v1_2.png" id="2_7p4pr"]
 [ext_resource type="Texture2D" uid="uid://dxpc8xdf61dfn" path="res://Assets/2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/skeleton1/v1/skeleton_v1_3.png" id="3_nf0wq"]
 [ext_resource type="Texture2D" uid="uid://hik5igw7fdhn" path="res://Assets/2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/skeleton1/v1/skeleton_v1_4.png" id="4_30vif"]
@@ -23,20 +24,16 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 4.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"new_animation",
-"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qltg4"]
 
 [node name="EnemyOne" type="CharacterBody2D"]
+script = ExtResource("1_o0682")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4p2ia")
-animation = &"new_animation"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

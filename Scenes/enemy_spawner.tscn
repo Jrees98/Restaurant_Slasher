@@ -6,10 +6,10 @@
 script = ExtResource("1_tsap5")
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(2.08165e-12, -50)
+position = Vector2(2.08165e-12, -100)
 
 [node name="Marker2D2" type="Marker2D" parent="."]
-position = Vector2(25, -50)
+position = Vector2(25, -100)
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
