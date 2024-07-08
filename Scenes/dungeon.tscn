@@ -6,9 +6,9 @@
 
 [node name="Dungeon" type="Node2D"]
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_3bgpq")]
+[node name="Player" parent="." instance=ExtResource("1_3bgpq")]
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+[node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-1, 0)
 zoom = Vector2(3, 3)
 
