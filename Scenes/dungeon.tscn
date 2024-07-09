@@ -12,7 +12,7 @@ script = ExtResource("1_4j11c")
 max_enemies = 1
 
 [node name="Player" parent="." instance=ExtResource("1_3bgpq")]
-position = Vector2(-100, 16)
+position = Vector2(-102, -212)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-1, 0)
