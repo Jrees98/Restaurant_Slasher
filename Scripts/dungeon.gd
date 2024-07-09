@@ -1,9 +1,9 @@
 extends Node2D
-var max_enemies : int
+@export var max_enemies : int
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	max_enemies = 1
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -1,27 +1,36 @@
 extends CharacterBody2D
 
-const ACCELERATION = 800
-const FRICTION = 500
-const MAX_SPEED = 100
+signal shoot
 
-func _physics_process(delta):
-	move(delta)
+const START_SPEED : int = 200
+const BOOST_SPEED : int = 400
+const NORMAL_SHOT : float = 0.5
+const FAST_SHOT : float = 0.1
+var speed : int
+var can_shoot : bool
+var screen_size : Vector2
+
+func _ready():
+	speed = 200
+	screen_size = get_viewport_rect().size
+
+func get_input():
+	#keyboard input
+	var input_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	velocity = input_dir.normalized() * speed
 	
+	if input_dir.x > 0:
+		$AnimatedSprite2D.play("walk_right")
+		$AnimatedSprite2D.flip_h = false
+	if input_dir.x < 0:
+		$AnimatedSprite2D.flip_h = true
+	if input_dir.y > 0:
+		$AnimatedSprite2D.play("walk_down")
+	if input_dir.y < 0:
+		$AnimatedSprite2D.play("walk_up")
 
-func move(delta):
-	var input_vector = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	if input_vector == Vector2.ZERO:
-		apply_friction(FRICTION * delta)
-	else:
-		apply_movement(input_vector * ACCELERATION * delta)
+func _physics_process(_delta):
+	#player movement
+	get_input()
 	move_and_slide()
 	
-func apply_friction(amount) -> void:
-	if velocity.length() > amount:
-		velocity -= velocity.normalized() * amount
-	else:
-		velocity = Vector2.ZERO
-		
-func apply_movement(amount) -> void:
-	velocity += amount
-	velocity = velocity.limit_length(MAX_SPEED)
